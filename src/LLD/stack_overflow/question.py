@@ -1,14 +1,26 @@
+from dataclasses import dataclass
 from users import Member
 from answer import Answer
 from constants import QuestionStatus, QuestionClosingRemark
-from question import Tag
-
+from meta import Votes, Flag
 from typing import List
+
 import datetime
 
 
-# todo: Abstract vote and comment class
-# todo: flag question
+@dataclass()
+class Tag:
+    name: str
+    description: str
+
+
+class Bounty:
+    def __init__(self, points=10, expires_in_days: int = 1):
+        self.points = points
+        self.start_date = datetime.datetime.today()
+        self.end_date = self.start_date + datetime.timedelta(days=expires_in_days)
+
+
 class Question:
     def __init__(self, title: str, content: str, author: Member, question_status=QuestionStatus.OPEN) -> None:
         self.title = title
@@ -20,6 +32,8 @@ class Question:
         self.question_status = question_status
         self.closing_remark = None
         self.bounty = None
+        self.votes = Votes()
+        self.flags = Flag()
 
     def add_bounty(self, bounty: Bounty):
         self.bounty = bounty
@@ -40,14 +54,9 @@ class Question:
         ...
 
 
-class Tag:
-    def __init__(self, name: str, description: str) -> None:
-        self.name = name
-        self.description = description
+def main():
+    ...
 
 
-class Bounty:
-    def __init__(self, points=10, expires_in_days: int = 1):
-        self.points = points
-        self.start_date = datetime.datetime.today()
-        self.end_date = self.start_date + datetime.timedelta(days=expires_in_days)
+if __name__ == '__main__':
+    main()

@@ -1,5 +1,6 @@
 import datetime
 from users import Member
+from meta import Votes, Flag
 
 
 class Answer:
@@ -8,4 +9,5 @@ class Answer:
         self.member = member
         self.accepted = False
         self.created_at = datetime.datetime.now()
-        self.votes = 0
+        self.votes = Votes()
+        self.flag = Flag()

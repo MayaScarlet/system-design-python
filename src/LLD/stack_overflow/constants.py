@@ -14,6 +14,8 @@ class QuestionStatus(Enum):
     CLOSE = 2
     ON_HOLD = 3
     DELETED = 4
+    FLAGGED = 5
+    HAS_BOUNTY = 6
 
 
 class QuestionClosingRemark(Enum):
