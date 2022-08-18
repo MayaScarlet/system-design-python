@@ -1,5 +1,4 @@
-# system-design-python
-System design
+# System design
 
 ***
 
