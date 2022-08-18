@@ -1,0 +1,53 @@
+from enum import Enum
+
+
+class AccountStatus(Enum):
+    ACTIVE = "ACTIVE"
+    CLOSED = "CLOSED"
+    CANCELLED = "CANCELLED"
+    BLACKLISTED = "BLACKLISTED"
+
+
+class AccountType(Enum):
+    MEMBER = "MEMBER"
+    GUEST = "GUEST"
+    ADMIN = "ADMIN"
+    RECEPTIONIST = "RECEPTIONIST"
+    HOUSEKEEPER = "HOUSEKEEPER"
+
+
+class RoomStatus(Enum):
+    AVAILABLE = "AVAILABLE"
+    RESERVED = "RESERVED"
+    OCCUPIED = "OCCUPIED"
+    SERVICE_IN_PROGRESS = "SERVICE_IN_PROGRESS"
+    NOT_AVAILABLE = "NOT_AVAILABLE"
+
+
+class RoomStyle(Enum):
+    STANDARD = "STANDARD"
+    DELUXE = "DELUXE"
+    FAMILY_SUITE = "FAMILY_SUITE"
+
+
+class BookingStatus(Enum):
+    REQUESTED = "REQUESTED"
+    PENDING = "PENDING"
+    CONFIRMED = "CONFIRMED"
+    CHECKED_IN = "CHECKED_IN"
+    CHECKED_OUT = "CHECKED_OUT"
+    CANCELLED = "CANCELLED"
+
+
+class PaymentStatus(Enum):
+    CONFIRMED = "CONFIRMED"
+    PENDING = "PENDING"
+    CANCELLED = "CANCELLED"
+    UNPAID = "UNPAID"
+    REFUNDED = "REFUNDED"
+    DECLINED = "DECLINED"
+
+
+class DiscountType(Enum):
+    FIXED = "FIXED"
+    PERCENT = "PERCENT"
